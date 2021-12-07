@@ -1,0 +1,97 @@
+## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ##
+## Aliases
+## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ##
+
+## Finder
+function finder() {
+	alias oo="open ."
+	alias y="yarn"
+	alias c="composer"
+	alias chrome="open -a 'Google Chrome'"
+
+	## Dev
+	alias hosts='code -w /etc/hosts;tput bel'
+	alias flushdns="dscacheutil -flushcache"
+	alias flushdns_real='sudo dscacheutil -flushcache && sudo killall -HUP mDNSResponder'
+	alias zsh='code -w ~/.zshrc;tput bel'
+	alias aa='code -w ${GOOGLE_DRIVE_PATH}/OS/Development/ZSH/dots/aliases;source ${GOOGLE_DRIVE_PATH}/OS/Development/ZSH/dots/aliases;tput bel'
+
+	## AWS
+	alias aws-so="aws --profile swedoffice"
+	alias aws-code="aws --profile codedevotion"
+	alias aws="aws --profile work-codedevotion"
+
+	## Laravel
+	alias a="php artisan"
+	alias sail='bash vendor/bin/sail'
+}
+
+## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ##
+## Methods
+## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ##
+function lazygit() {
+    git add .
+    git commit -a -m "$1"
+    git push
+}
+function git-update-all() {
+	echo "Updating Git and all submodules";
+	git submodule update --recursive
+}
+
+## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ##
+## SSH Aliases
+## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ##
+function ssh_aliases() {
+	## Private
+	#alias jtwedding.se="ssh -2 forge@178.62.66.103"
+
+	## Elicit
+	#alias pindelive.staging="ssh -2 forge@cloud.staging.pindeliver.com"
+	#alias staging1.elicit="ssh -2 forge@31.216.38.65"
+	
+	## Swedoffice
+	#alias swedoffice.se-old="ssh -2 root@dedserv78.levonline.com"
+
+	## CodeDevotion
+	#alias codedevotion.com="ssh -2 s8020f@ssh.i8t.com"
+	#alias lopvm1="ssh root@185.84.29.12"
+	#alias sandbox.codedevotion="ssh forge@46.101.3.216"
+	#alias docker-code="ssh root@46.101.207.82"
+
+	## CodeDevotion - Internt
+	#alias server-office="ssh kwickell@192.168.10.50"
+	#alias server-office-outside="ssh kwickell@84.243.25.206"
+
+	## CodeDevotion - Clients
+	#alias svenskaljusgrossisten.se-old="ssh -p1157 svenskal@svenskaljusgrossisten.se"
+	#alias kvadratfast.se-old="ssh root@188.226.135.180"
+	#alias kvadratfast.se="ssh forge@138.68.156.191"
+	#alias spesialdekker.no="ssh s2401a@ssh.i8t.com"
+	#alias peopleintech.se="ssh peopleintech.se@ssh.peopleintech.se"
+	#alias parkettdesign.se-old="ssh parkettdesign.se@ssh.parkettdesign.se"
+	#alias parkettdesign.se="ssh forge@188.166.138.203"
+	#alias parkettdesign.se="ssh root@68.183.243.44"
+	#alias glossmagazine.com="ssh s0250@ssh.i8t.com"
+	#alias modernlite.se="ssh forge@178.62.122.95"
+	#alias golvslipning.net="ssh root@188.166.138.203"
+
+	## CodeDevotion - Services
+	# alias git.codedevotion.com="ssh -2 root@95.85.23.146"
+	# alias jira.codedevotion.com="ssh -2 root@188.166.103.161"
+	# alias confluence.codedevotion.com="ssh -2 root@188.166.100.120"
+	# alias bamboo.codedevotion.com="ssh -2 root@178.62.212.95"
+	# alias admin.codedevotion.com="ssh -2 root@188.166.86.55"
+	# alias media.wickell.se="ssh -2 root@162.243.171.5"
+	# alias workshop="ssh -2 forge@178.62.12.171"
+
+	# Sandbergsjarn
+	#alias sandbergs.kassa="ssh -2 kim@159.89.11.191"
+}
+
+## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ##
+## Initiators
+## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ##
+finder
+ssh_aliases
+
